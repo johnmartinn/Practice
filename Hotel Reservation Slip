@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+#include <cstdio>
+ 
+using namespace std;
+
+void pause()
+{
+    cout << endl;
+    cout << "Press any key to continue" << endl;
+    cin.get();
+}
+int main ()
+{
+string customername;
+short age;
+int numberofguests;
+float numberofdays;
+float rateperday;
+float totalpayment;
+float downpayment;
+float balance;
+
+cout << "Customer Name:" << endl;
+cin >> customername;
+
+cout << "Age :" << endl;
+cin >> age;
+
+cout << "Number of guests :" << endl;
+cin >> numberofguests;
+
+cout << "Number of days :" << endl;
+cin >> numberofdays;
+ 
+switch (numberofguests) {
+ case 1: numberofguests = 1;
+        rateperday = 1000; break;
+ case 2: numberofguests = 2;
+        rateperday = 1800; break;
+ case 3: numberofguests = 3;
+        rateperday = 2700; break;
+ case 4: numberofguests = 4;
+        rateperday = 3600; break; 
+ case 5: numberofguests >= 5;
+        rateperday = 4500; break;      
+}
+
+totalpayment = rateperday * numberofdays;
+downpayment = 0.4 * totalpayment;
+balance = totalpayment - downpayment;
+ 
+cout << "Hotel Reservation Slip" << endl;
+cout << "Customer Name :" << customername << endl;
+cout << "Age :" << age<< endl;
+cout << "Number of guests :" << numberofguests << endl;
+cout << "Number of days :" << numberofdays << endl;
+cout << "Total Payment :" << totalpayment << endl;
+cout << "Downpayment :" << downpayment << endl;
+cout << "Balance :" << balance << endl;
+
+pause();
+return 0;
+}
