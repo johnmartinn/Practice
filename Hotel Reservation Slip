@@ -24,17 +24,20 @@ float downpayment;
 float balance;
 
 cout << "Customer Name:" << endl;
-cin >> customername;
+getline(cin, customername);
 
 cout << "Age :" << endl;
 cin >> age;
 
+if (age >= 18)
+{
 cout << "Number of guests :" << endl;
 cin >> numberofguests;
 
 cout << "Number of days :" << endl;
 cin >> numberofdays;
- 
+
+
 switch (numberofguests) {
  case 1: numberofguests = 1;
         rateperday = 1000; break;
@@ -60,6 +63,11 @@ cout << "Number of days :" << numberofdays << endl;
 cout << "Total Payment :" << totalpayment << endl;
 cout << "Downpayment :" << downpayment << endl;
 cout << "Balance :" << balance << endl;
+}
+else
+{
+    cout << "You are not allowed" << endl;
+}
 
 pause();
 return 0;
