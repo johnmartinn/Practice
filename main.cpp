@@ -31,14 +31,16 @@ using namespace std;
             getline(cin, Name);
             cout << "Basic salary : " ; 
             cin >> Basicsalary;
+        
+                if (Basicsalary < 10000)
+                {
+                cout << "Invalid Input, please re-enter a salary above 10,000PHP" << endl;
+                cout << "Basic Salary : ";
+                cin >> Basicsalary;
+                }
+        
             cout << "Number of OT hours: " ;
             cin >> OThours;
-
-        if (Basicsalary < 10000)
-        {
-            cout << "Invalid Input, please re-enter a salary above 10,000PHP" << endl;
-            cin >> Basicsalary;
-        }
 
         Payslip employee(Name, OThours, Basicsalary);
         employee.PayGradeTaxRate();
